@@ -5,56 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Autorización y consentimiento informado · PRISMA</title>
 <style>
-  :root{
-    --paper:#FFFFFF;--ink:#1C2530;--muted:#5C6773;--line:#D9DEE5;
-    --blue:#15689B;--blue-deep:#0E456B;--blue-soft:#EAF2F8;--bg:#EEF1F4;--radius:4px;
-  }
+  :root{--paper:#FFFFFF;--ink:#1C2530;--muted:#5C6773;--line:#D9DEE5;--blue:#15689B;--blue-deep:#0E456B;--blue-soft:#EAF2F8;--bg:#EEF1F4;--radius:4px;}
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Helvetica,sans-serif;
-    line-height:1.6;-webkit-font-smoothing:antialiased;padding:26px 14px 80px;
-  }
+  body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Helvetica,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;padding:26px 14px 80px;}
   .wrap{max-width:760px;margin:0 auto;}
-
   .langbar{display:flex;justify-content:flex-end;margin-bottom:12px;}
-  .btn-lang{
-    display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line);
-    color:var(--blue);border-radius:22px;padding:8px 16px;font:inherit;font-size:13.5px;
-    font-weight:600;cursor:pointer;transition:background .15s,border-color .15s;
-  }
+  .btn-lang{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line);color:var(--blue);border-radius:22px;padding:8px 16px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;transition:background .15s,border-color .15s;}
   .btn-lang:hover{background:var(--blue-soft);border-color:var(--blue);}
-
   .sheet{background:var(--paper);border:1px solid var(--line);box-shadow:0 14px 44px -24px rgba(28,37,48,.4);padding:46px 52px 40px;}
-
   .head{text-align:center;margin-bottom:6px;}
   .logo{width:168px;height:auto;display:block;margin:0 auto 16px;}
-  .title{font-size:19px;font-weight:700;line-height:1.25;margin:0 auto 9px;color:var(--ink);max-width:560px;}
+  .title{font-size:18px;font-weight:700;line-height:1.25;margin:0 auto 9px;color:var(--ink);max-width:560px;}
   .project{font-size:13px;font-style:italic;color:var(--muted);margin:0 auto;line-height:1.45;max-width:600px;}
-  .hr{height:2px;background:var(--blue);border:0;margin:22px 0 24px;opacity:.85;}
-
-  .narr p{margin:0 0 14px;font-size:14px;text-align:justify;}
-
-  h2.sec{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:700;margin:28px 0 16px;padding-bottom:7px;border-bottom:1px solid var(--line);}
-
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:17px 20px;}
+  .hr{height:2px;background:var(--blue);border:0;margin:20px 0 22px;opacity:.85;}
+  .narr p{margin:0 0 12px;font-size:13.5px;text-align:justify;}
+  h2.sec{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:700;margin:24px 0 15px;padding-bottom:7px;border-bottom:1px solid var(--line);}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;}
   .field{display:flex;flex-direction:column;gap:6px;position:relative;}
   .field.full{grid-column:1 / -1;}
   label{font-size:12px;font-weight:600;color:var(--muted);}
   input[type=text],input[type=date]{font:inherit;font-size:14.5px;color:var(--ink);background:#FBFCFD;border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px;width:100%;transition:border-color .15s,box-shadow .15s;}
   input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft);}
-
   .combo-list{list-style:none;margin:4px 0 0;padding:4px;position:absolute;top:100%;left:0;right:0;z-index:30;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 16px 36px -16px rgba(28,37,48,.45);max-height:240px;overflow-y:auto;display:none;}
   .combo-list li{padding:9px 11px;font-size:14px;border-radius:4px;cursor:pointer;}
   .combo-list li:hover,.combo-list li.active{background:var(--blue-soft);color:var(--blue-deep);}
   .combo-empty{padding:9px 11px;font-size:13px;color:var(--muted);}
-
-  canvas#sig{width:100%;height:150px;background:#FBFCFD;border:1px solid var(--line);border-radius:var(--radius);touch-action:none;cursor:crosshair;display:block;}
-  .sign-foot{display:flex;justify-content:space-between;align-items:center;margin-top:7px;}
+  canvas#sig{width:100%;height:148px;background:#FBFCFD;border:1px solid var(--line);border-radius:var(--radius);touch-action:none;cursor:crosshair;display:block;}
+  .sign-foot{display:flex;justify-content:space-between;align-items:center;margin-top:7px;gap:10px;flex-wrap:wrap;}
   .sign-line{font-size:12px;color:var(--muted);}
-
-  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;}
+  .sign-btns{display:flex;gap:8px;}
+  .mini-btn{padding:7px 13px;font:inherit;font-size:13px;font-weight:600;border-radius:6px;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--muted);}
+  .mini-btn.pri{background:var(--blue-soft);border-color:#BcD8EC;color:var(--blue-deep);}
+  .mini-btn:hover{filter:brightness(.98);}
+  #qrpanel{margin-top:14px;border:1px solid var(--line);border-radius:10px;background:#FBFCFD;padding:18px;text-align:center;display:none;}
+  #qrbox{display:flex;justify-content:center;margin:12px 0;}
+  #qrbox img,#qrbox canvas{border:6px solid #fff;border-radius:8px;box-shadow:0 6px 18px -8px rgba(0,0,0,.25);}
+  #qrstatus{font-size:13.5px;font-weight:600;color:var(--blue-deep);margin-bottom:10px;}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
   button.act{font:inherit;cursor:pointer;border:none;border-radius:6px;font-weight:600;font-size:14.5px;padding:13px 24px;transition:transform .08s,filter .15s;}
   button.act:active{transform:translateY(1px);}
   .btn-pdf{background:var(--blue);color:#fff;flex:1;min-width:180px;box-shadow:0 8px 20px -10px rgba(21,104,155,.75);}
@@ -62,39 +50,35 @@
   .btn-ghost{background:#fff;color:var(--muted);border:1px solid var(--line);}
   .btn-ghost:hover{background:#F4F6F8;}
   .err{color:#B5392B;font-size:13px;margin-top:12px;display:none;}
-
-  .docver{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
-
+  .docver{margin-top:24px;padding-top:13px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:right;}
   .pv{display:none;}
   .pv-val{font-weight:600;border-bottom:1px solid var(--ink);padding:0 5px;}
-
   @media (max-width:580px){.sheet{padding:30px 22px;}.grid{grid-template-columns:1fr;}body{padding:14px 9px 60px;}}
 
-  /* ---------- IMPRESIÓN: TODO EN UNA PÁGINA ---------- */
   @media print{
-    @page{size:A4;margin:11mm 13mm;}
+    @page{size:A4;margin:10mm 12mm;}
     html,body{background:#fff;padding:0;color:#000;}
     *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
     .langbar,.actions,.err,.no-print{display:none !important;}
     .wrap{max-width:none;}
     .sheet{box-shadow:none;border:none;padding:0;}
     .head{margin-bottom:2px;}
-    .logo{width:118px;margin:0 auto 8px;}
-    .title{font-size:13pt;line-height:1.2;margin-bottom:4px;}
-    .project{font-size:8.4pt;line-height:1.32;}
-    .hr{margin:9px 0 11px;height:1.5px;}
-    .narr p{font-size:9.1pt;line-height:1.34;margin:0 0 7px;text-align:justify;}
-    h2.sec{font-size:8.3pt;margin:11px 0 7px;padding-bottom:4px;letter-spacing:.1em;}
-    .grid{gap:7px 18px;}
+    .logo{width:104px;margin:0 auto 6px;}
+    .title{font-size:11.5pt;line-height:1.18;margin-bottom:3px;}
+    .project{font-size:7.7pt;line-height:1.28;}
+    .hr{margin:7px 0 8px;height:1.4px;}
+    .narr p{font-size:8.5pt;line-height:1.3;margin:0 0 5px;text-align:justify;}
+    h2.sec{font-size:8pt;margin:9px 0 6px;padding-bottom:3px;letter-spacing:.09em;}
+    .grid{gap:6px 16px;}
     .field{gap:2px;}
-    label{font-size:7.8pt;}
+    label{font-size:7.5pt;}
     input,.combo-list{display:none !important;}
     .pv{display:inline;}
-    .pv-val{font-size:9pt;}
-    canvas#sig{border:none;border-bottom:1px solid #000;height:64px;background:#fff;}
+    .pv-val{font-size:8.6pt;}
+    canvas#sig{border:none;border-bottom:1px solid #000;height:56px;background:#fff;}
     .sign-foot{margin-top:3px;}
-    .sign-line{font-size:7.8pt;}
-    .docver{margin-top:12px;padding-top:8px;font-size:7.4pt;}
+    .sign-line{font-size:7.5pt;}
+    .docver{margin-top:10px;padding-top:7px;font-size:7.2pt;}
   }
 </style>
 </head>
@@ -119,8 +103,9 @@
     <hr class="hr">
 
     <div class="narr">
-      <p id="t-p1">Yo, la persona que suscribe, manifiesto de manera libre, voluntaria e informada mi consentimiento para que Caribe Afirmativo registre y trate mis datos personales en el sistema de información PRISMA, en el marco del proyecto <em>Construyendo Puentes, Tejiendo Caminos</em>, con el fin de caracterizar mi situación, brindarme acompañamiento y orientar el acceso a mis derechos como persona LGBTIQ+ en situación de movilidad humana. Reconozco que algunos de mis datos —como los relacionados con mi orientación sexual, mi identidad de género o mi estado de salud— pueden considerarse datos sensibles conforme a la Ley 1581 de 2012, y declaro que su entrega es libre y voluntaria, entendiendo que no estoy obligado/a/e a otorgarla y que ello no condiciona el acompañamiento que pueda recibir.</p>
-      <p id="t-p2">Autorizo el tratamiento de mis datos personales por parte de Caribe Afirmativo, identificada con NIT 900.321.082-6, con domicilio en Cra. 60 #58-70, Barranquilla, en calidad de responsable del tratamiento, conforme a la Ley 1581 de 2012 y su política de tratamiento de datos, disponible en https://n9.cl/8tr6xj o solicitada al correo tic@caribeafirmativo.lgbt. Los datos serán utilizados exclusivamente para los fines aquí descritos y podrán conservarse durante el tiempo necesario para cumplirlos. Como titular de mis datos personales, tengo derecho a conocer, actualizar, rectificar y suprimir mis datos, así como a revocar esta autorización. Para ejercer estos derechos puedo comunicarme con Caribe Afirmativo a través del correo tic@caribeafirmativo.lgbt o los canales definidos en la política de tratamiento de datos.</p>
+      <p id="t-p1">Al llenar el presente formulario manifiesto de manera libre, expresa, voluntaria e informada mi consentimiento para que Caribe Afirmativo, en los términos del literal a) del artículo 6 de la Ley 1581 de 2012, realice la recolección, almacenamiento, uso y en general, tratamiento de mis datos personales en el sistema de información PRISMA, en el marco del proyecto <em>Construyendo Puentes, Tejiendo Caminos</em>. Este tratamiento se realizará bajo el estricto cumplimiento de la ley nacional colombiana y en armonía con los principios de especificación de la finalidad y limitación de la recolección consagrados en las Directrices de la OCDE sobre la Privacidad y Flujos Transfronterizos de Datos, así como en los Principios Actualizados sobre la Privacidad y la Protección de Datos Personales de la Organización de Estados Americanos (OEA) con el fin de caracterizar mi situación, brindarme acompañamiento y orientar el acceso a mis derechos como persona LGBTIQ+ en situación de movilidad humana. Reconozco que algunos de mis datos —como los relacionados con mi orientación sexual, mi identidad de género o mi estado de salud— pueden considerarse datos sensibles conforme a la Ley 1581 de 2012, y declaro que su entrega es libre y voluntaria, entendiendo que no estoy obligado/a/e a otorgarlos y que ello no condiciona el acompañamiento que pueda recibir.</p>
+      <p id="t-p2">De igual manera, autorizo el tratamiento de mis datos personales por parte de Caribe Afirmativo, corporación identificada con NIT 900.321.082-6, con domicilio en la Cra. 60 #58-70 de la ciudad de Barranquilla, en calidad de responsable del tratamiento, de conformidad con la normatividad colombiana en materia de tratamiento de datos, los estándares internacionales de las Directrices de la OCDE sobre Privacidad (particularmente en sus principios de salvaguardas de seguridad, calidad de los datos y responsabilidad), y su política institucional de tratamiento de datos disponible en https://n9.cl/8tr6xj o solicitada al correo tic@caribeafirmativo.lgbt.</p>
+      <p id="t-p3">Los datos serán utilizados exclusivamente para los fines aquí descritos, aplicando el principio de limitación del uso, y podrán conservarse únicamente durante el tiempo necesario para cumplirlos. Como titular de mis datos personales, tengo derecho a conocer, actualizar, rectificar y suprimir mis datos, así como a revocar esta autorización, garantizando así el principio de participación individual previsto tanto en el ordenamiento jurídico colombiano como en el marco internacional de la OCDE y la OEA. Para ejercer estos derechos puedo comunicarme con Caribe Afirmativo a través del correo tic@caribeafirmativo.lgbt o los canales definidos en la política de tratamiento de datos.</p>
     </div>
 
     <h2 class="sec" id="t-secdatos">Datos de la persona</h2>
@@ -158,12 +143,21 @@
     <canvas id="sig"></canvas>
     <div class="sign-foot">
       <span class="sign-line" id="t-signline">Firma de la persona titular de los datos</span>
-      <button type="button" class="btn-ghost no-print" id="t-clear" style="padding:6px 13px;font-size:13px;border-radius:6px;cursor:pointer;font-weight:600;" onclick="clearSig()">Limpiar firma</button>
+      <div class="sign-btns no-print">
+        <button type="button" class="mini-btn pri" id="t-btnqr" onclick="abrirQR()">Firmar desde el celular</button>
+        <button type="button" class="mini-btn" id="t-clear" onclick="clearSig()">Limpiar firma</button>
+      </div>
+    </div>
+
+    <div id="qrpanel" class="no-print">
+      <div id="qrstatus">—</div>
+      <div id="t-qrinstr" style="font-size:13px;color:var(--muted);">Escanea el código con tu celular y firma allí.</div>
+      <div id="qrbox"></div>
+      <button type="button" class="mini-btn" id="t-qrcancel" onclick="cerrarQR()">Cerrar</button>
     </div>
 
     <div class="docver">
-      <span id="t-ver">Versión 0.1 (borrador) · Ley 1581 de 2012</span>
-      <span><span id="t-gen">Generado el</span> <span id="ts">—</span></span>
+      <span id="t-gen">Generado el</span> <span id="ts">—</span>
     </div>
 
   </div>
@@ -176,34 +170,52 @@
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  /* ===== textos por idioma ===== */
+  /* =========================================================
+     CONFIGURA AQUÍ TU PROYECTO SUPABASE (firma por QR)
+     Pega tu Project URL y tu clave anon public.
+     NUNCA pongas aquí la clave service_role.
+  ========================================================= */
+  var SUPABASE_URL = "https://TU-PROYECTO.supabase.co";
+  var SUPABASE_ANON_KEY = "TU_ANON_KEY";
+  /* ========================================================= */
+
   var I18N = {
     es:{
       title:"Autorización y consentimiento informado para el tratamiento de datos personales",
       project:"Construyendo Puentes, Tejiendo Caminos: Promoviendo acciones de exigibilidad de derechos y protección internacional de las personas LGBTIQ+ en situación de movilidad humana en Iberoamérica.",
-      p1:"Yo, la persona que suscribe, manifiesto de manera libre, voluntaria e informada mi consentimiento para que Caribe Afirmativo registre y trate mis datos personales en el sistema de información PRISMA, en el marco del proyecto <em>Construyendo Puentes, Tejiendo Caminos</em>, con el fin de caracterizar mi situación, brindarme acompañamiento y orientar el acceso a mis derechos como persona LGBTIQ+ en situación de movilidad humana. Reconozco que algunos de mis datos —como los relacionados con mi orientación sexual, mi identidad de género o mi estado de salud— pueden considerarse datos sensibles conforme a la Ley 1581 de 2012, y declaro que su entrega es libre y voluntaria, entendiendo que no estoy obligado/a/e a otorgarla y que ello no condiciona el acompañamiento que pueda recibir.",
-      p2:"Autorizo el tratamiento de mis datos personales por parte de Caribe Afirmativo, identificada con NIT 900.321.082-6, con domicilio en Cra. 60 #58-70, Barranquilla, en calidad de responsable del tratamiento, conforme a la Ley 1581 de 2012 y su política de tratamiento de datos, disponible en https://n9.cl/8tr6xj o solicitada al correo tic@caribeafirmativo.lgbt. Los datos serán utilizados exclusivamente para los fines aquí descritos y podrán conservarse durante el tiempo necesario para cumplirlos. Como titular de mis datos personales, tengo derecho a conocer, actualizar, rectificar y suprimir mis datos, así como a revocar esta autorización. Para ejercer estos derechos puedo comunicarme con Caribe Afirmativo a través del correo tic@caribeafirmativo.lgbt o los canales definidos en la política de tratamiento de datos.",
+      p1:"Al llenar el presente formulario manifiesto de manera libre, expresa, voluntaria e informada mi consentimiento para que Caribe Afirmativo, en los términos del literal a) del artículo 6 de la Ley 1581 de 2012, realice la recolección, almacenamiento, uso y en general, tratamiento de mis datos personales en el sistema de información PRISMA, en el marco del proyecto <em>Construyendo Puentes, Tejiendo Caminos</em>. Este tratamiento se realizará bajo el estricto cumplimiento de la ley nacional colombiana y en armonía con los principios de especificación de la finalidad y limitación de la recolección consagrados en las Directrices de la OCDE sobre la Privacidad y Flujos Transfronterizos de Datos, así como en los Principios Actualizados sobre la Privacidad y la Protección de Datos Personales de la Organización de Estados Americanos (OEA) con el fin de caracterizar mi situación, brindarme acompañamiento y orientar el acceso a mis derechos como persona LGBTIQ+ en situación de movilidad humana. Reconozco que algunos de mis datos —como los relacionados con mi orientación sexual, mi identidad de género o mi estado de salud— pueden considerarse datos sensibles conforme a la Ley 1581 de 2012, y declaro que su entrega es libre y voluntaria, entendiendo que no estoy obligado/a/e a otorgarlos y que ello no condiciona el acompañamiento que pueda recibir.",
+      p2:"De igual manera, autorizo el tratamiento de mis datos personales por parte de Caribe Afirmativo, corporación identificada con NIT 900.321.082-6, con domicilio en la Cra. 60 #58-70 de la ciudad de Barranquilla, en calidad de responsable del tratamiento, de conformidad con la normatividad colombiana en materia de tratamiento de datos, los estándares internacionales de las Directrices de la OCDE sobre Privacidad (particularmente en sus principios de salvaguardas de seguridad, calidad de los datos y responsabilidad), y su política institucional de tratamiento de datos disponible en https://n9.cl/8tr6xj o solicitada al correo tic@caribeafirmativo.lgbt.",
+      p3:"Los datos serán utilizados exclusivamente para los fines aquí descritos, aplicando el principio de limitación del uso, y podrán conservarse únicamente durante el tiempo necesario para cumplirlos. Como titular de mis datos personales, tengo derecho a conocer, actualizar, rectificar y suprimir mis datos, así como a revocar esta autorización, garantizando así el principio de participación individual previsto tanto en el ordenamiento jurídico colombiano como en el marco internacional de la OCDE y la OEA. Para ejercer estos derechos puedo comunicarme con Caribe Afirmativo a través del correo tic@caribeafirmativo.lgbt o los canales definidos en la política de tratamiento de datos.",
       secDatos:"Datos de la persona",
       lblNombre:"Nombre", lblTipo:"Tipo de documento", lblNum:"Número de documento",
       lblPais:"País de registro", lblFecha:"Fecha de diligenciamiento",
       secFirma:"Firma", signLine:"Firma de la persona titular de los datos",
       ph:"Escribe para buscar…", btnPdf:"Descargar PDF", btnNew:"Nuevo formulario", clearSig:"Limpiar firma",
       err:"Completa el nombre y el número de documento, y registra la firma para generar el documento.",
-      ver:"Versión 0.1 (borrador) · Ley 1581 de 2012", gen:"Generado el", toggle:"Português (BR)"
+      gen:"Generado el", toggle:"Português (BR)",
+      btnQR:"Firmar desde el celular", qrInstr:"Escanea el código con tu celular y firma allí.",
+      qrWait:"Esperando firma…", qrOk:"Firma recibida ✓", qrCancel:"Cerrar",
+      qrConfig:"Para activar la firma por QR, configura SUPABASE_URL y SUPABASE_ANON_KEY dentro del archivo."
     },
     pt:{
       title:"Autorização e consentimento informado para o tratamento de dados pessoais",
       project:"Construindo Pontes, Tecendo Caminhos: Promovendo ações de exigibilidade de direitos e proteção internacional das pessoas LGBTIQ+ em situação de mobilidade humana na Ibero-América.",
-      p1:"Eu, a pessoa abaixo assinada, manifesto de maneira livre, voluntária e informada meu consentimento para que a Caribe Afirmativo registre e trate meus dados pessoais no sistema de informação PRISMA, no âmbito do projeto <em>Construindo Pontes, Tecendo Caminhos</em>, com a finalidade de caracterizar minha situação, oferecer-me acompanhamento e orientar o acesso aos meus direitos como pessoa LGBTIQ+ em situação de mobilidade humana. Reconheço que alguns dos meus dados —como os relacionados à minha orientação sexual, à minha identidade de gênero ou ao meu estado de saúde— podem ser considerados dados sensíveis conforme a Lei 1581 de 2012 da Colômbia, e declaro que seu fornecimento é livre e voluntário, entendendo que não sou obrigado/a/e a concedê-lo e que isso não condiciona o acompanhamento que eu possa receber.",
-      p2:"Autorizo o tratamento dos meus dados pessoais pela Caribe Afirmativo, identificada com NIT 900.321.082-6, com domicílio na Cra. 60 #58-70, Barranquilla, na qualidade de responsável pelo tratamento, conforme a Lei 1581 de 2012 da Colômbia e sua política de tratamento de dados, disponível em https://n9.cl/8tr6xj ou solicitada ao e-mail tic@caribeafirmativo.lgbt. Os dados serão utilizados exclusivamente para os fins aqui descritos e poderão ser conservados pelo tempo necessário para cumpri-los. Como titular dos meus dados pessoais, tenho direito a conhecer, atualizar, retificar e suprimir meus dados, bem como a revogar esta autorização. Para exercer esses direitos, posso entrar em contato com a Caribe Afirmativo pelo e-mail tic@caribeafirmativo.lgbt ou pelos canais definidos na política de tratamento de dados.",
+      p1:"Ao preencher o presente formulário, manifesto de maneira livre, expressa, voluntária e informada meu consentimento para que a Caribe Afirmativo, nos termos da alínea a) do artigo 6 da Lei 1581 de 2012, realize a coleta, o armazenamento, o uso e, em geral, o tratamento dos meus dados pessoais no sistema de informação PRISMA, no âmbito do projeto <em>Construindo Pontes, Tecendo Caminhos</em>. Este tratamento será realizado sob o estrito cumprimento da lei nacional colombiana e em harmonia com os princípios de especificação da finalidade e limitação da coleta consagrados nas Diretrizes da OCDE sobre a Privacidade e os Fluxos Transfronteiriços de Dados, bem como nos Princípios Atualizados sobre a Privacidade e a Proteção de Dados Pessoais da Organização dos Estados Americanos (OEA), com a finalidade de caracterizar minha situação, oferecer-me acompanhamento e orientar o acesso aos meus direitos como pessoa LGBTIQ+ em situação de mobilidade humana. Reconheço que alguns dos meus dados —como os relacionados à minha orientação sexual, à minha identidade de gênero ou ao meu estado de saúde— podem ser considerados dados sensíveis conforme a Lei 1581 de 2012, e declaro que seu fornecimento é livre e voluntário, entendendo que não sou obrigado/a/e a fornecê-los e que isso não condiciona o acompanhamento que eu possa receber.",
+      p2:"Da mesma forma, autorizo o tratamento dos meus dados pessoais pela Caribe Afirmativo, corporação identificada com NIT 900.321.082-6, com domicílio na Cra. 60 #58-70 da cidade de Barranquilla, na qualidade de responsável pelo tratamento, em conformidade com a normativa colombiana em matéria de tratamento de dados, os padrões internacionais das Diretrizes da OCDE sobre Privacidade (particularmente em seus princípios de salvaguardas de segurança, qualidade dos dados e responsabilidade), e sua política institucional de tratamento de dados disponível em https://n9.cl/8tr6xj ou solicitada ao e-mail tic@caribeafirmativo.lgbt.",
+      p3:"Os dados serão utilizados exclusivamente para os fins aqui descritos, aplicando o princípio de limitação do uso, e poderão ser conservados unicamente durante o tempo necessário para cumpri-los. Como titular dos meus dados pessoais, tenho direito a conhecer, atualizar, retificar e suprimir meus dados, bem como a revogar esta autorização, garantindo assim o princípio de participação individual previsto tanto no ordenamento jurídico colombiano quanto no marco internacional da OCDE e da OEA. Para exercer esses direitos, posso entrar em contato com a Caribe Afirmativo pelo e-mail tic@caribeafirmativo.lgbt ou pelos canais definidos na política de tratamento de dados.",
       secDatos:"Dados da pessoa",
       lblNombre:"Nome", lblTipo:"Tipo de documento", lblNum:"Número do documento",
       lblPais:"País de registro", lblFecha:"Data de preenchimento",
       secFirma:"Assinatura", signLine:"Assinatura da pessoa titular dos dados",
       ph:"Digite para buscar…", btnPdf:"Baixar PDF", btnNew:"Novo formulário", clearSig:"Limpar assinatura",
       err:"Preencha o nome e o número do documento, e registre a assinatura para gerar o documento.",
-      ver:"Versão 0.1 (rascunho) · Lei 1581 de 2012", gen:"Gerado em", toggle:"Español"
+      gen:"Gerado em", toggle:"Español",
+      btnQR:"Assinar pelo celular", qrInstr:"Escaneie o código com seu celular e assine por lá.",
+      qrWait:"Aguardando assinatura…", qrOk:"Assinatura recebida ✓", qrCancel:"Fechar",
+      qrConfig:"Para ativar a assinatura por QR, configure SUPABASE_URL e SUPABASE_ANON_KEY dentro do arquivo."
     }
   };
 
@@ -269,19 +281,13 @@
     "Djibuti","Zâmbia","Zimbábue","Apátrida / Sem nacionalidade","Outro"
   ];
 
-  var currentLang = "es";
-  var currentPaises = PAISES_ES;
-
+  var currentLang="es", currentPaises=PAISES_ES;
   function norm(s){return (s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();}
 
   function sync(el){
-    var span=document.querySelector('.pv-val[data-for="'+el.id+'"]');
-    if(!span) return;
+    var span=document.querySelector('.pv-val[data-for="'+el.id+'"]'); if(!span) return;
     var v=el.value;
-    if(el.id==='fecha' && v){
-      var p=v.split('-'); var d=new Date(+p[0],+p[1]-1,+p[2]);
-      v=d.toLocaleDateString(currentLang==='pt'?'pt-BR':'es-CO',{day:'numeric',month:'long',year:'numeric'});
-    }
+    if(el.id==='fecha' && v){var p=v.split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);v=d.toLocaleDateString(currentLang==='pt'?'pt-BR':'es-CO',{day:'numeric',month:'long',year:'numeric'});}
     span.textContent = v || '________________';
   }
 
@@ -292,6 +298,7 @@
     document.getElementById('t-project').innerHTML=L.project;
     document.getElementById('t-p1').innerHTML=L.p1;
     document.getElementById('t-p2').innerHTML=L.p2;
+    document.getElementById('t-p3').innerHTML=L.p3;
     document.getElementById('t-secdatos').textContent=L.secDatos;
     document.getElementById('t-lbl-nombre').textContent=L.lblNombre;
     document.getElementById('t-lbl-tipo').textContent=L.lblTipo;
@@ -301,24 +308,21 @@
     document.getElementById('t-secfirma').textContent=L.secFirma;
     document.getElementById('t-signline').textContent=L.signLine;
     document.getElementById('t-clear').textContent=L.clearSig;
+    document.getElementById('t-btnqr').textContent=L.btnQR;
+    document.getElementById('t-qrinstr').textContent=L.qrInstr;
+    document.getElementById('t-qrcancel').textContent=L.qrCancel;
     document.getElementById('t-btnpdf').textContent=L.btnPdf;
     document.getElementById('t-btnnew').textContent=L.btnNew;
-    document.getElementById('t-ver').textContent=L.ver;
     document.getElementById('t-gen').textContent=L.gen;
     document.getElementById('t-toggle').textContent=L.toggle;
     document.getElementById('err').textContent=L.err;
     document.getElementById('tipodoc').placeholder=L.ph;
     document.getElementById('paisreg').placeholder=L.ph;
-    /* re-mapear país seleccionado al nuevo idioma */
     var paisInput=document.getElementById('paisreg');
-    var from = (lang==='pt')?PAISES_ES:PAISES_PT;
-    var to   = (lang==='pt')?PAISES_PT:PAISES_ES;
-    var idx = from.indexOf(paisInput.value);
-    if(idx>-1){ paisInput.value=to[idx]; }
-    currentPaises = (lang==='pt')?PAISES_PT:PAISES_ES;
-    currentLang = lang;
-    sync(paisInput);
-    sync(document.getElementById('fecha'));
+    var from=(lang==='pt')?PAISES_ES:PAISES_PT, to=(lang==='pt')?PAISES_PT:PAISES_ES;
+    var idx=from.indexOf(paisInput.value); if(idx>-1){paisInput.value=to[idx];}
+    currentPaises=(lang==='pt')?PAISES_PT:PAISES_ES; currentLang=lang;
+    sync(paisInput); sync(document.getElementById('fecha'));
   }
   function toggleLang(){ setLang(currentLang==='es'?'pt':'es'); }
 
@@ -330,11 +334,7 @@
       var matches = f ? arr.filter(function(d){return norm(d).indexOf(f)>-1;}) : arr.slice();
       list.innerHTML=""; active=-1;
       if(matches.length===0){ list.innerHTML='<li class="combo-empty">—</li>'; list.style.display="block"; return; }
-      matches.forEach(function(d){
-        var li=document.createElement("li"); li.textContent=d;
-        li.addEventListener("mousedown",function(e){e.preventDefault(); choose(d);});
-        list.appendChild(li);
-      });
+      matches.forEach(function(d){var li=document.createElement("li");li.textContent=d;li.addEventListener("mousedown",function(e){e.preventDefault();choose(d);});list.appendChild(li);});
       list.style.display="block";
     }
     function choose(val){ input.value=val; list.style.display="none"; sync(input); }
@@ -344,12 +344,12 @@
     input.addEventListener("blur",function(){ setTimeout(function(){list.style.display="none";},150); });
     input.addEventListener("keydown",function(e){
       var its=items(); if(!its.length) return;
-      if(e.key==="ArrowDown"){e.preventDefault(); active=Math.min(active+1,its.length-1);}
-      else if(e.key==="ArrowUp"){e.preventDefault(); active=Math.max(active-1,0);}
-      else if(e.key==="Enter"){ if(active>-1){e.preventDefault(); choose(its[active].textContent);} return; }
+      if(e.key==="ArrowDown"){e.preventDefault();active=Math.min(active+1,its.length-1);}
+      else if(e.key==="ArrowUp"){e.preventDefault();active=Math.max(active-1,0);}
+      else if(e.key==="Enter"){if(active>-1){e.preventDefault();choose(its[active].textContent);}return;}
       else return;
       its.forEach(function(x){x.classList.remove("active");});
-      if(its[active]){ its[active].classList.add("active"); its[active].scrollIntoView({block:"nearest"}); }
+      if(its[active]){its[active].classList.add("active");its[active].scrollIntoView({block:"nearest"});}
     });
   }
   initCombo("tipodoc","list-tipodoc", function(){return TIPOS_DOC;});
@@ -362,18 +362,49 @@
   function start(e){drawing=true;hasSig=true;var p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);e.preventDefault();}
   function move(e){if(!drawing)return;var p=pos(e);ctx.lineTo(p.x,p.y);ctx.stroke();e.preventDefault();}
   function end(){drawing=false;}
-  canvas.addEventListener('mousedown',start); canvas.addEventListener('mousemove',move); window.addEventListener('mouseup',end);
-  canvas.addEventListener('touchstart',start); canvas.addEventListener('touchmove',move); canvas.addEventListener('touchend',end);
+  canvas.addEventListener('mousedown',start);canvas.addEventListener('mousemove',move);window.addEventListener('mouseup',end);
+  canvas.addEventListener('touchstart',start);canvas.addEventListener('touchmove',move);canvas.addEventListener('touchend',end);
   function clearSig(){ctx.clearRect(0,0,canvas.width,canvas.height);hasSig=false;}
+
+  /* ===== Firma por QR (Supabase Realtime broadcast) ===== */
+  var sbClient=null, sigChannel=null;
+  function sbConfigured(){ return SUPABASE_URL.indexOf("TU-PROYECTO")<0 && SUPABASE_ANON_KEY.indexOf("TU_ANON")<0 && window.supabase; }
+  function getSB(){ if(!sbClient){ sbClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY); } return sbClient; }
+  function abrirQR(){
+    var L=I18N[currentLang];
+    if(!sbConfigured()){ alert(L.qrConfig); return; }
+    var sid = Math.random().toString(36).slice(2,10);
+    var signUrl = new URL('firmar.html', location.href).href + '?s=' + sid + '&lang=' + currentLang;
+    var box=document.getElementById('qrbox'); box.innerHTML='';
+    new QRCode(box, { text:signUrl, width:188, height:188, correctLevel:QRCode.CorrectLevel.M });
+    document.getElementById('qrstatus').textContent=L.qrWait;
+    document.getElementById('qrpanel').style.display='block';
+    if(sigChannel){ try{getSB().removeChannel(sigChannel);}catch(e){} sigChannel=null; }
+    sigChannel = getSB().channel('firma-'+sid, { config:{ broadcast:{ self:false } } });
+    sigChannel.on('broadcast', { event:'firma' }, function(msg){
+      var dataURL = msg && msg.payload && msg.payload.dataURL; if(!dataURL) return;
+      var img=new Image();
+      img.onload=function(){
+        var r=canvas.getBoundingClientRect();
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.drawImage(img,0,0,r.width,r.height);
+        hasSig=true;
+        document.getElementById('qrstatus').textContent=I18N[currentLang].qrOk;
+        setTimeout(cerrarQR,1500);
+      };
+      img.src=dataURL;
+    });
+    sigChannel.subscribe();
+  }
+  function cerrarQR(){
+    document.getElementById('qrpanel').style.display='none';
+    if(sigChannel){ try{getSB().removeChannel(sigChannel);}catch(e){} sigChannel=null; }
+  }
 
   function generar(){
     var nombre=document.getElementById('nombre').value.trim();
     var numdoc=document.getElementById('numdoc').value.trim();
-    if(!nombre || !numdoc || !hasSig){
-      document.getElementById('err').style.display='block';
-      window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
-      return;
-    }
+    if(!nombre || !numdoc || !hasSig){document.getElementById('err').style.display='block';window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});return;}
     document.getElementById('err').style.display='none';
     document.getElementById('ts').textContent = new Date().toLocaleString(currentLang==='pt'?'pt-BR':'es-CO',{dateStyle:'long',timeStyle:'short'});
     setTimeout(function(){ window.print(); }, 120);
